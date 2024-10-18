@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module fetches and exports the TODO list progress
+of an employee into a JSON file.
+"""
+
 import json
 import requests
 
