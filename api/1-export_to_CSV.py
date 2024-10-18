@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module fetches and exports the TODO 
+This module fetches and exports the TODO
 list progress of an employee into a CSV file.
 """
 import csv
@@ -43,7 +43,7 @@ def export_employee_todo_to_csv(employee_id):
 
         # Write the records in the required format
         for task in todos:
-            writer.writerow([employee_id, employee_name, 
+            writer.writerow([employee_id, employee_name,
                              task.get('completed'), task.get('title')])
 
     print(f"Data exported to {file_name}")
