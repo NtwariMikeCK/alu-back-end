@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module fetches and exports the TODO list progress of an employee into a JSON file.
+This module fetches and exports the TODO list progress
+of an employee into a JSON file.
 """
 import json
 import requests
@@ -16,7 +17,8 @@ def export_employee_todo_to_json(employee_id):
         employee_id (int): The ID of the employee.
 
     The JSON format:
-        { "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ...]}
+        { "USER_ID": [{"task": "TASK_TITLE", 
+        "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ...]}
     """
     url = "https://jsonplaceholder.typicode.com"
 
@@ -32,7 +34,6 @@ def export_employee_todo_to_json(employee_id):
     # Fetch TODO list data for the employee
     todo_response = requests.get(f"{url}/todos?userId={employee_id}")
     todos = todo_response.json()
-
     # Prepare the data in the required format
     tasks = [{"task": task.get('title'), 
               "completed": task.get('completed'), 
@@ -59,4 +60,3 @@ if __name__ == "__main__":
             export_employee_todo_to_json(employee_id)
         except ValueError:
             print("Employee ID must be an integer.")
-
