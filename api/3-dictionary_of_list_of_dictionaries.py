@@ -2,7 +2,10 @@
 import json
 import requests
 
-# URL for users and tasks
+"""
+This module fetches and exports the TODO list progress
+of an employee into a JSON file.
+"""
 users_url = 'https://jsonplaceholder.typicode.com/users'
 todos_url = 'https://jsonplaceholder.typicode.com/todos'
 
