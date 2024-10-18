@@ -17,7 +17,6 @@ all_tasks = {}
 for user in users:
     user_id = user['id']
     username = user['username']
-    
     # Filter tasks for the current user
     user_tasks = []
     for task in todos:
@@ -28,7 +27,6 @@ for user in users:
                 "completed": task['completed']
             }
             user_tasks.append(task_info)
-    
     # Assign the list of tasks to the user's ID in the dictionary
     all_tasks[user_id] = user_tasks
 
