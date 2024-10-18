@@ -17,7 +17,7 @@ def export_employee_todo_to_json(employee_id):
         employee_id (int): The ID of the employee.
 
     The JSON format:
-        { "USER_ID": [{"task": "TASK_TITLE", 
+        { "USER_ID": [{"task": "TASK_TITLE",
         "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ...]}
     """
     url = "https://jsonplaceholder.typicode.com"
@@ -35,8 +35,8 @@ def export_employee_todo_to_json(employee_id):
     todo_response = requests.get(f"{url}/todos?userId={employee_id}")
     todos = todo_response.json()
     # Prepare the data in the required format
-    tasks = [{"task": task.get('title'), 
-              "completed": task.get('completed'), 
+    tasks = [{"task": task.get('title'),
+              "completed": task.get('completed'),
               "username": employee_name} for task in todos]
 
     data = {str(employee_id): tasks}
